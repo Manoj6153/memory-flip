@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@400;500;600;700&display=swap');
+*{
+    margin:0 ;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 100vh;
+    background-color: blueviolet;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card .back_view img{
+    max-width: 45px;
+}
+
+.cards{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
+.cards .card{
+    cursor: pointer;
+    position: relative;
+    perspective: 800px;
+    transform-style: preserve-3d;
+    height: calc(100% / 4 - 10px);
+    width: calc(100% / 4 - 10px);
+}
+.wrapper{
+    padding: 25px;
+    height: 400px;
+    width: 400px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    margin-top: 150px;
+}
+
+.card, .view{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .front_view span{
+    color: rgb(12, 133, 173);
+    font-size: 50px;
+}
+
+.card .back_view{
+    transform: rotateY(-180deg);
+}
+
+.card.flip .front_view{
+    transform: rotateY(180deg);
+}
+.card.flip .back_view{
+    transform: rotateY(0);
+}
+.cards .card .view{
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 0.25s linear;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 3px 10px rgba(0, 0,0,0.1);
+    border-radius: 5px;
+}
+
+.card.shake{
+    animation: shake 0.35s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100%{
+        transform: translateX(0);
+    }
+    20%{
+        transform: translateX(-13px);
+    }
+    40%{
+        transform: translateX(13px);
+    }
+    60%{
+        transform: translateX(-8px);
+    }
+    80%{
+        transform: translateX(8px);
+    }
+}
+
+.card.shake1{
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake1{
+    0%, 100%{
+        transform: translateX(0);
+    }
+    20%{
+        transform: translateX(-13px);
+    }
+    40%{
+        transform: translateX(13px);
+    }
+    60%{
+        transform: translateX(-8px);
+    }
+    80%{
+        transform: translateX(8px);
+    }
+}
